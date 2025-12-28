@@ -35,6 +35,7 @@ static BOOL processKeychainItem(NSDictionary *item, NSDictionary **outJSON, NSSt
 		return NO;
 	}
 
+	// Microsoft accounts (maybe others too?) are not supported
 	if (!json[@"AccountOathSecretKey"] || ![json[@"AccountType"]isEqual:@(2)]) {
 		*outError = [NSString stringWithFormat:@"Account type not supported for item '%@'", displayName];
 		return NO;
@@ -112,9 +113,9 @@ static void processKeychain() {
 
 		handleResults(successfulItems, failedErrors);
 	} else if (status == errSecItemNotFound) {
-		NSLog(@"[MS-2FA-Export] No keychain entries found");
+		NSLog(@"No keychain entries found");
 	} else {
-		NSLog(@"[MS-2FA-Export] Keychain query failed with status: %d", (int)status);
+		NSLog(@"Keychain query failed with status: %d", (int)status);
 	}
 }
 
