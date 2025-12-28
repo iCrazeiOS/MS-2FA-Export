@@ -1,0 +1,9 @@
+Package: com.icraze.ms2faexport
+Name: MS-2FA-Export
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Add seed export functionality to Microsoft Authenticator (fuck you microsoft, even google allows this)
+Maintainer: iCraze
+Author: iCraze
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
